@@ -9,5 +9,8 @@ namespace restaurantApp.Models
         public virtual Order Order { get; set; }
         public int ItemId { get; set; }
         public virtual Item Item { get; set; }
+#nullable enable
+        public string? SpecialRequest { get; set; }
+        public virtual List<OrderItemAddOn>? AddOns { get; set; }
     }
 }
