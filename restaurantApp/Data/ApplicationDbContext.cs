@@ -47,15 +47,25 @@ namespace restaurantApp.Data
                  new Ingredient() { Id = 3, Name = "Ketchup" }
                 );
             builder.Entity<Item>().HasData(
-                new Item() { Id = 1, Name = "Chicken and broccoli", Price = (decimal)8.5, ImageUrl = "https://selecthealth.org/-/media/selecthealth/blogs/post/2020/10/chicken_broccoli_blog_lg.ashx?h=533&w=800", Description = "Chicken and broccoli stir fry.", CategoryId = 2 },
-                new Item() { Id = 2, Name = "Fried Shrimp", Price = (decimal)5.5, ImageUrl = "https://s4i9q7n8.rocketcdn.me/wordpress/wp-content/uploads/2016/05/Mrs-Fridays-Pouch-Butterfly-011230-1192x542.jpg", Description = "Fried jumbo shrimp", CategoryId = 1 },
-                new Item() { Id = 3, Name = "Ice Cream Cake", Price = (decimal)3.5, ImageUrl = "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/96109/chocolate-buttercream-frosting-cake.0e9d3271850adca83740d049c1777048.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1&w=1946", Description = "Cake made with Ice cream", CategoryId = 3 }
+                new Item() { Id = 1, Name = "Chicken and broccoli",  ImageUrl = "https://selecthealth.org/-/media/selecthealth/blogs/post/2020/10/chicken_broccoli_blog_lg.ashx?h=533&w=800", Description = "Chicken and broccoli stir fry.", CategoryId = 2 },
+                new Item() { Id = 2, Name = "Fried Shrimp", ImageUrl = "https://s4i9q7n8.rocketcdn.me/wordpress/wp-content/uploads/2016/05/Mrs-Fridays-Pouch-Butterfly-011230-1192x542.jpg", Description = "Fried jumbo shrimp", CategoryId = 1 },
+                new Item() { Id = 3, Name = "Ice Cream Cake", ImageUrl = "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/96109/chocolate-buttercream-frosting-cake.0e9d3271850adca83740d049c1777048.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1&w=1946", Description = "Cake made with Ice cream", CategoryId = 3 }
                     );
             builder.Entity<ItemIngredient>().HasData(
                  new ItemIngredient() { Id = 1, ItemId = 1, IngredientId = 1 },
                  new ItemIngredient() { Id = 2, ItemId = 1, IngredientId = 2 },
                  new ItemIngredient() { Id = 3, ItemId = 2, IngredientId = 3 }
                 );
+            builder.Entity<Size>().HasData(
+             new Size() { Id = 1, Name = "Small" },
+             new Size() { Id = 2, Name = "Median" },
+             new Size() { Id = 3, Name = "Large" }
+            );
+            builder.Entity<ItemSize>().HasData(
+     new ItemSize() { Id = 1, ItemId = 1, SizeId = 3, Price = (decimal)8.5 },
+     new ItemSize() { Id = 2, ItemId = 2, SizeId = 2, Price = (decimal)5.5 },
+     new ItemSize() { Id = 3, ItemId = 3, SizeId = 1, Price = (decimal)3.5 }
+    );
         }
     }
 }

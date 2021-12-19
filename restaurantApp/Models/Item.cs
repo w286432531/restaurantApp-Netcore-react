@@ -11,12 +11,11 @@ namespace restaurantApp.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        [RegularExpression(@"^\d+\.\d{0,2}$")]
-        public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public string Description { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+        public virtual List<ItemSize> Sizes { get; set; }
         public virtual List<ItemIngredient> Ingredients { get; set; }
         public virtual List<OrderedItem> Orders { get; set; }
         public virtual List<CartItem> Carts { get; set; }

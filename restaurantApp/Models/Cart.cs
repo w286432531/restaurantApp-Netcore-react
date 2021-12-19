@@ -17,7 +17,7 @@ namespace restaurantApp.Models
                     decimal totalPrice = 0;
                     foreach (var item in Items)
                     {
-                        totalPrice += item.Item.Price;
+                        totalPrice += item.ItemSize.Price;
                     }
                     return totalPrice;
                 }
